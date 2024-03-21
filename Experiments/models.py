@@ -43,3 +43,26 @@ def compas_NN_fit(X_train, y_train):
     model.fit(X_train, y_train, batch_size=512, epochs=200, verbose=0)
 
     return model
+
+def bike_sharing_NN_fit(X_train, y_train):
+    model = keras.Sequential([
+        keras.layers.Dense(1024, activation="relu"),
+        keras.layers.BatchNormalization(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(512, activation="relu"),
+        keras.layers.BatchNormalization(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(256, activation="relu"),
+        keras.layers.BatchNormalization(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(128, activation="relu"),
+        keras.layers.BatchNormalization(),
+        keras.layers.Dropout(0.2),
+        keras.layers.Dense(1)
+    ])
+
+    optimizer = keras.optimizers.Adam(learning_rate=0.001)
+    model.compile(optimizer=optimizer, loss="mse", metrics=["mae", keras.metrics.RootMeanSquaredError()])
+    model.fit(X_train, y_train, batch_size=512, epochs=60, verbose=0)
+    
+    return model

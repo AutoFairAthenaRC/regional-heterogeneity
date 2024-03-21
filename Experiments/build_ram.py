@@ -1,5 +1,4 @@
 import itertools
-import effector
 
 import numpy as np
 from interpret.glassbox import ExplainableBoostingRegressor, ExplainableBoostingClassifier
@@ -14,6 +13,7 @@ class RegionsTransformer(BaseEstimator, TransformerMixin):
         self.feature_name_prefix = feature_name_prefix
 
     def fit(self, X, y=None):
+        self.is_fitted_ = True
         return self
 
     def transform(self, X, y=None):
