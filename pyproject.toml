@@ -1,0 +1,21 @@
+[project]
+name = "heteram"
+version = "0.0.1"
+authors = [
+  { name="Example Author", email="author@example.com" },
+]
+description = "Experimentation with RAMs, different notions of heterogeneity and the relationship between them."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+Homepage = "https://github.com/AutoFairAthenaRC/regional-heterogeneity"
+Issues = "https://github.com/AutoFairAthenaRC/regional-heterogeneity/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
