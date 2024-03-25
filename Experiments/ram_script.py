@@ -6,10 +6,10 @@ from interpret.glassbox import ExplainableBoostingClassifier, ExplainableBoostin
 import effector
 from effector.binning_methods import Greedy
 
-from datasets import adult, compas, bike_sharing
-from data_utils import split
-from models import bike_sharing_NN_fit, wrap_tf_model, adult_NN_fit, compas_NN_fit
-from build_ram import fit_RAM_classification, fit_RAM_regression
+from heteram.datasets import adult, compas, bike_sharing
+from heteram.data_utils import split
+from heteram.models import bike_sharing_NN_fit, wrap_tf_model, adult_NN_fit, compas_NN_fit
+from heteram.build_ram import fit_RAM_classification, fit_RAM_regression
 
 def splits_PDP(X_train, model_forward, feature_names):
     regional_pdp = effector.RegionalPDP(
